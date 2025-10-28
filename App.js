@@ -3,7 +3,7 @@ import { StyleSheet, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
@@ -67,9 +67,9 @@ export default function App() {
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
       >
-        <SafeAreaView style={{ ...styles.rootScreen, marginTop: 64 }}>
-          {screen}
-        </SafeAreaView>
+        <SafeAreaProvider>
+          <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+        </SafeAreaProvider>
       </ImageBackground>
     </LinearGradient>
   );
