@@ -3,7 +3,6 @@ import {
   Image,
   Text,
   StyleSheet,
-  Dimensions,
   useWindowDimensions,
   Platform,
   ScrollView,
@@ -24,6 +23,7 @@ function GameOverScreen({ roundsNumber, userNumber, onStartNewGame }) {
     width: imageSize,
     height: imageSize,
     borderRadius: imageSize / 2,
+    margin: imageSize === 300 ? 36 : imageSize === 150 ? 24 : 12,
   };
 
   return (
